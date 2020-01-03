@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  sqlserver:
+    build:
+      context: ./sqlserver
+      dockerfile: Dockerfile
+    init: true
+    container_name: sqlserver
+    ports:
+      - "5434:1433"
