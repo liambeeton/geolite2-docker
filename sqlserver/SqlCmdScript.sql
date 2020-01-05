@@ -21,36 +21,40 @@ ALTER ROLE [db_owner] ADD MEMBER [GeoLite2User]
 END
 GO
 
-IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'GeoIP')
-DROP TABLE GeoIP
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'CityBlock')
+DROP TABLE CityBlock
 GO
 
-CREATE TABLE GeoIP (
-    startIpNum bigint,
-	endIpNum bigint,
-	locId  bigint
+CREATE TABLE CityBlock (
+    network nvarchar(15) default NULL,
+	geoname_id nvarchar(15) default NULL,
+	registered_country_geoname_id nvarchar(15) default NULL,
+	represented_country_geoname_id nvarchar(15) default NULL,
+	is_anonymous_proxy nvarchar(15) default NULL,
+	is_satellite_provider nvarchar(15) default NULL,
+	postal_code nvarchar(15) default NULL,
+	latitude nvarchar(15) default NULL,
+	longitude nvarchar(15) default NULL,
+	accuracy_radius nvarchar(15) default NULL
 )
 
-CREATE CLUSTERED INDEX Geo_IP_Look
-ON GeoIP
-([startIpNum], [endIpNum],  [locId])
-
-IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'GeoLocation')
-DROP TABLE GeoLocation
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'CityLocation')
+DROP TABLE CityLocation
 GO
 
-CREATE TABLE GeoLocation (
-	 locId bigint,
-	 country nvarchar(2),
-	 region nvarchar(3),
-	 city nvarchar(255),
-	 postalCode nvarchar(10),
-	 latitude nvarchar(15),
-	 longitude nvarchar(15),
-	 metroCode nvarchar(15),
-	 areaCode nvarchar(15)
+CREATE TABLE CityLocation (
+	geoname_id nvarchar(15) default NULL,
+	locale_code nvarchar(15) default NULL,
+	continent_code nvarchar(15) default NULL,
+	continent_name nvarchar(15) default NULL,
+	country_iso_code nvarchar(15) default NULL,
+	country_name nvarchar(15) default NULL,
+	subdivision_1_iso_code nvarchar(15) default NULL,
+	subdivision_1_name nvarchar(15) default NULL,
+	subdivision_2_iso_code nvarchar(15) default NULL,
+	subdivision_2_name nvarchar(15) default NULL,
+	city_name nvarchar(15) default NULL,
+	metro_code nvarchar(15) default NULL,
+	time_zone nvarchar(15) default NULL,
+	is_in_european_union nvarchar(15) default NULL
 )
-
-CREATE CLUSTERED INDEX Geo_Info_Look
-ON GeoLocation
-([locId], [country], [region], [city], [latitude], [longitude])
