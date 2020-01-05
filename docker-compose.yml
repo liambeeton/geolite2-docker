@@ -5,6 +5,8 @@ services:
     build:
       context: ./sqlserver
       dockerfile: Dockerfile
+      args:
+        license_key: ${MAXMIND_LICENSE_KEY}
     init: true
     container_name: sqlserver
     ports:
