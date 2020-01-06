@@ -21,40 +21,40 @@ ALTER ROLE [db_owner] ADD MEMBER [GeoLite2User]
 END
 GO
 
-IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'CityBlock')
-DROP TABLE CityBlock
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'IpAddressV4')
+DROP TABLE IpAddressV4
 GO
 
-CREATE TABLE CityBlock (
-    network varchar(30) default NULL,
-	geoname_id varchar(30) default NULL,
-	registered_country_geoname_id varchar(30) default NULL,
-	represented_country_geoname_id varchar(30) default NULL,
-	is_anonymous_proxy varchar(30) default NULL,
-	is_satellite_provider varchar(30) default NULL,
-	postal_code varchar(30) default NULL,
-	latitude varchar(30) default NULL,
-	longitude varchar(30) default NULL,
-	accuracy_radius varchar(30) default NULL
+CREATE TABLE IpAddressV4 (
+    Network varchar(30) default NULL,
+	GeonameId varchar(30) default NULL,
+	RegisteredCountryGeonameId varchar(30) default NULL,
+	RepresentedCountryGeonameId varchar(30) default NULL,
+	IsAnonymousProxy varchar(30) default NULL,
+	IsSatelliteProvider varchar(30) default NULL,
+	PostalCode varchar(30) default NULL,
+	Latitude varchar(30) default NULL,
+	Longitude varchar(30) default NULL,
+	AccuracyRadius varchar(30) default NULL
 )
 
-IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'CityLocation')
-DROP TABLE CityLocation
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'City')
+DROP TABLE City
 GO
 
-CREATE TABLE CityLocation (
-	geoname_id varchar(30) default NULL,
-	locale_code varchar(30) default NULL,
-	continent_code varchar(30) default NULL,
-	continent_name varchar(30) default NULL,
-	country_iso_code varchar(30) default NULL,
-	country_name varchar(30) default NULL,
-	subdivision_1_iso_code varchar(30) default NULL,
-	subdivision_1_name varchar(30) default NULL,
-	subdivision_2_iso_code varchar(30) default NULL,
-	subdivision_2_name varchar(30) default NULL,
-	city_name varchar(30) default NULL,
-	metro_code varchar(30) default NULL,
-	time_zone varchar(30) default NULL,
-	is_in_european_union varchar(30) default NULL
+CREATE TABLE City (
+	GeonameId varchar(30) default NULL,
+	LocaleCode varchar(30) default NULL,
+	ContinentCode varchar(30) default NULL,
+	ContinentName varchar(30) default NULL,
+	CountryIsoCode varchar(30) default NULL,
+	CountryName varchar(30) default NULL,
+	Subdivision1IsoCode varchar(30) default NULL,
+	Subdivision1Name varchar(30) default NULL,
+	Subdivision2IsoCode varchar(30) default NULL,
+	Subdivision2Name varchar(30) default NULL,
+	CityName varchar(30) default NULL,
+	MetroCode varchar(30) default NULL,
+	TimeZone varchar(30) default NULL,
+	IsInEuropeanUnion varchar(30) default NULL
 )
