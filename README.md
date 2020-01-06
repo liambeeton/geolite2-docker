@@ -6,6 +6,14 @@ Here you can get more information about [GeoLite2 Free Downloadable Databases](h
 
 You will need to register and obtain a license key from the [MaxMind](https://www.maxmind.com/) website.
 
+## MaxMind Account
+
+MaxMind now requires you to register with them to obtain a license key for downloading the GeoLite2 Databases.
+
+Once you have generated your free license key you can test downloading the CSV version of the GeoLite2 database using this url: https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City-CSV&license_key=ABCD12345&suffix=zip
+
+Ensure that you replace the license key in the URL with your own.
+
 ## Usage
 
 ```sh
