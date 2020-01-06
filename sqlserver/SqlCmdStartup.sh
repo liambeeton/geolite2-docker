@@ -12,7 +12,7 @@ sleep 10s
 # /opt/mssql-tools/bin/bcp GeoLite2.dbo.City format nul -S localhost -U sa -P Passw0rd -c -f City-c.fmt
 
 # import GeoLite2 IPv4 Addresses
-/opt/mssql-tools/bin/bcp GeoLite2.dbo.IpAddressV4 in ./geolite2/GeoLite2-City-Blocks-IPv4.csv -c -t ',' -r '0x0A' -F 2 -S localhost -U sa -P Passw0rd
+# /opt/mssql-tools/bin/bcp GeoLite2.dbo.IpAddressV4 in ./geolite2/GeoLite2-City-Blocks-IPv4.csv -c -t ',' -r '0x0A' -F 2 -S localhost -U sa -P Passw0rd
 
 # import GeoLite2 City
-/opt/mssql-tools/bin/bcp GeoLite2.dbo.City in ./geolite2/GeoLite2-City-Locations-en.csv -c -t ',' -r '0x0A' -F 2 -S localhost -U sa -P Passw0rd
+# /opt/mssql-tools/bin/bcp GeoLite2.dbo.City in ./geolite2/GeoLite2-City-Locations-en.csv -c -t ',' -r '0x0A' -F 2 -S localhost -U sa -P Passw0rd
