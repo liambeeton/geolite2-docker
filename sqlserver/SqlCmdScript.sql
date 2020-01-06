@@ -26,16 +26,16 @@ DROP TABLE CityBlock
 GO
 
 CREATE TABLE CityBlock (
-    network nvarchar(15) default NULL,
-	geoname_id nvarchar(15) default NULL,
-	registered_country_geoname_id nvarchar(15) default NULL,
-	represented_country_geoname_id nvarchar(15) default NULL,
-	is_anonymous_proxy nvarchar(15) default NULL,
-	is_satellite_provider nvarchar(15) default NULL,
-	postal_code nvarchar(15) default NULL,
-	latitude nvarchar(15) default NULL,
-	longitude nvarchar(15) default NULL,
-	accuracy_radius nvarchar(15) default NULL
+    network varchar(30) default NULL,
+	geoname_id varchar(30) default NULL,
+	registered_country_geoname_id varchar(30) default NULL,
+	represented_country_geoname_id varchar(30) default NULL,
+	is_anonymous_proxy varchar(30) default NULL,
+	is_satellite_provider varchar(30) default NULL,
+	postal_code varchar(30) default NULL,
+	latitude varchar(30) default NULL,
+	longitude varchar(30) default NULL,
+	accuracy_radius varchar(30) default NULL
 )
 
 IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'CityLocation')
@@ -43,18 +43,18 @@ DROP TABLE CityLocation
 GO
 
 CREATE TABLE CityLocation (
-	geoname_id nvarchar(15) default NULL,
-	locale_code nvarchar(15) default NULL,
-	continent_code nvarchar(15) default NULL,
-	continent_name nvarchar(15) default NULL,
-	country_iso_code nvarchar(15) default NULL,
-	country_name nvarchar(15) default NULL,
-	subdivision_1_iso_code nvarchar(15) default NULL,
-	subdivision_1_name nvarchar(15) default NULL,
-	subdivision_2_iso_code nvarchar(15) default NULL,
-	subdivision_2_name nvarchar(15) default NULL,
-	city_name nvarchar(15) default NULL,
-	metro_code nvarchar(15) default NULL,
-	time_zone nvarchar(15) default NULL,
-	is_in_european_union nvarchar(15) default NULL
+	geoname_id varchar(30) default NULL,
+	locale_code varchar(30) default NULL,
+	continent_code varchar(30) default NULL,
+	continent_name varchar(30) default NULL,
+	country_iso_code varchar(30) default NULL,
+	country_name varchar(30) default NULL,
+	subdivision_1_iso_code varchar(30) default NULL,
+	subdivision_1_name varchar(30) default NULL,
+	subdivision_2_iso_code varchar(30) default NULL,
+	subdivision_2_name varchar(30) default NULL,
+	city_name varchar(30) default NULL,
+	metro_code varchar(30) default NULL,
+	time_zone varchar(30) default NULL,
+	is_in_european_union varchar(30) default NULL
 )
