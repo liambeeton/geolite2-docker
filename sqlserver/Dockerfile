@@ -9,7 +9,7 @@ RUN apk add --no-cache curl \
 FROM microsoft/mssql-server-linux
 ENV ACCEPT_EULA Y
 ENV SA_PASSWORD Passw0rd
-COPY --from=0 ./geolite2 ./
+COPY --from=0 ./geolite2 ./geolite2
 COPY ./entrypoint.sh ./SqlCmdStartup.sh ./SqlCmdScript.sql ./
 RUN chmod +x ./SqlCmdStartup.sh
 CMD /bin/bash ./entrypoint.sh

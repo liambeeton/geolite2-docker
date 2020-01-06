@@ -1,0 +1,16 @@
+14.0
+14
+1       SQLCHAR             0       30      "\t"   1     geoname_id                                                                                   SQL_Latin1_General_CP1_CI_AS
+2       SQLCHAR             0       30      "\t"   2     locale_code                                                                                  SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR             0       30      "\t"   3     continent_code                                                                               SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR             0       30      "\t"   4     continent_name                                                                               SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       30      "\t"   5     country_iso_code                                                                             SQL_Latin1_General_CP1_CI_AS
+6       SQLCHAR             0       30      "\t"   6     country_name                                                                                 SQL_Latin1_General_CP1_CI_AS
+7       SQLCHAR             0       30      "\t"   7     subdivision_1_iso_code                                                                       SQL_Latin1_General_CP1_CI_AS
+8       SQLCHAR             0       30      "\t"   8     subdivision_1_name                                                                           SQL_Latin1_General_CP1_CI_AS
+9       SQLCHAR             0       30      "\t"   9     subdivision_2_iso_code                                                                       SQL_Latin1_General_CP1_CI_AS
+10      SQLCHAR             0       30      "\t"   10    subdivision_2_name                                                                           SQL_Latin1_General_CP1_CI_AS
+11      SQLCHAR             0       30      "\t"   11    city_name                                                                                    SQL_Latin1_General_CP1_CI_AS
+12      SQLCHAR             0       30      "\t"   12    metro_code                                                                                   SQL_Latin1_General_CP1_CI_AS
+13      SQLCHAR             0       30      "\t"   13    time_zone                                                                                    SQL_Latin1_General_CP1_CI_AS
+14      SQLCHAR             0       30      "\n"   14    is_in_european_union                                                                         SQL_Latin1_General_CP1_CI_AS
