@@ -2,9 +2,9 @@
 
 This tutorial will walk you through setting up GeoLite2 databases which are free IP geolocation databases.
 
-Here you can get more information about [GeoLite2 Free Downloadable Databases](https://dev.maxmind.com/geoip/geoip2/geolite2/).
-
 You will need to register and obtain a license key from the [MaxMind](https://www.maxmind.com/) website.
+
+[GeoLite2 Databases](https://dev.maxmind.com/geoip/geoip2/geolite2/) has more detailed information about the databases and how to sign up for a license key.
 
 ## MaxMind Account
 
@@ -38,7 +38,6 @@ Use the following commands to setup the services and database:
 ```sh
 $ docker-compose build
 $ docker-compose up
-$ docker-compose down
 ```
 
 Use the following commands to reset and remove the services and database:
