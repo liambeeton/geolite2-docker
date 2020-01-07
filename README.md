@@ -10,15 +10,40 @@ You will need to register and obtain a license key from the [MaxMind](https://ww
 
 MaxMind now requires you to register with them to obtain a license key for downloading the GeoLite2 Databases.
 
-Once you have generated your free license key you can test downloading the CSV version of the GeoLite2 database using this url: https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City-CSV&license_key=ABCD12345&suffix=zip
+Once you have generated your free license key you can test downloading the CSV version of the GeoLite2 database using this url: https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City-CSV&license_key=YOUR-LICENSE-KEY&suffix=zip
 
 Ensure that you replace the license key in the URL with your own.
 
+## ENV file
+
+Use an .env file to manage your environment variables. This file is ignored by default in the [.gitignore](.gitignore) file.
+
+```
+$ touch .env
+```
+
+Add the environment variable MAXMIND_LICENSE_KEY=YOUR-LICENSE-KEY to your .env file.
+
+## SQL Server
+
+The SQL Server [Dockerfile](sqlserver/Dockerfile) uses multi-stage builds to configure the following two stages:
+
+* 1st stage - Download and unzip the GeoLite2 databases in CSV format
+* 2nd stage - Setup a SQL Server instance and run scripts to create the GeoLite2 database with tables as well as import the CSV files
+
 ## Usage
+
+Use the following commands to setup the services and database:
 
 ```sh
 $ docker-compose build
 $ docker-compose up
+$ docker-compose down
+```
+
+Use the following commands to reset and remove the services and database:
+
+```sh
 $ docker-compose down
 ```
 
