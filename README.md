@@ -18,7 +18,7 @@ Ensure that you replace the license key in the URL with your own.
 
 Use an .env file to manage your environment variables. This file is ignored by default in the [.gitignore](.gitignore) file.
 
-```
+```sh
 $ touch .env
 ```
 
@@ -30,6 +30,15 @@ The SQL Server [Dockerfile](sqlserver/Dockerfile) uses multi-stage builds to con
 
 * 1st stage - Download and unzip the GeoLite2 databases in CSV format
 * 2nd stage - Setup a SQL Server instance and run scripts to create the GeoLite2 database with tables as well as import the CSV files
+
+```sql
+DECLARE @IP bigint
+SET @IP = dbo.IPAddressToInteger('190.88.141.163')
+
+SELECT TOP 1 GeoLite2Locations.* FROM GeoLite2IPv4 
+INNER JOIN GeoLite2Locations ON GeoLite2Locations.geoname_id = GeoLite2IPv4.geoname_id
+WHERE @IP BETWEEN startIpNum AND endIpNum
+```
 
 ## Usage
 
